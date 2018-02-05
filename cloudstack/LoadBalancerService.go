@@ -24,6 +24,7 @@ import (
 	"strings"
 )
 
+// test jini  gg
 type CreateLoadBalancerRuleParams struct {
 	p map[string]interface{}
 }
