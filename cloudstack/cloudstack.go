@@ -95,6 +95,7 @@ type CloudStackClient struct {
 	LDAP             *LDAPService
 	Limit            *LimitService
 	LoadBalancer     *LoadBalancerService
+	MpxLoadBalancer  *MpxLoadBalancerService
 	NAT              *NATService
 	NetworkACL       *NetworkACLService
 	NetworkDevice    *NetworkDeviceService
@@ -178,6 +179,7 @@ func newClient(apiurl string, apikey string, secret string, async bool, verifyss
 	cs.LDAP = NewLDAPService(cs)
 	cs.Limit = NewLimitService(cs)
 	cs.LoadBalancer = NewLoadBalancerService(cs)
+	cs.MpxLoadBalancer = NewMpxLoadBalancerService(cs)
 	cs.NAT = NewNATService(cs)
 	cs.NetworkACL = NewNetworkACLService(cs)
 	cs.NetworkDevice = NewNetworkDeviceService(cs)
@@ -658,6 +660,14 @@ type LoadBalancerService struct {
 
 func NewLoadBalancerService(cs *CloudStackClient) *LoadBalancerService {
 	return &LoadBalancerService{cs: cs}
+}
+
+type MpxLoadBalancerService struct {
+	cs *CloudStackClient
+}
+
+func NewMpxLoadBalancerService(cs *CloudStackClient) *MpxLoadBalancerService {
+	return &MpxLoadBalancerService{cs: cs}
 }
 
 type NATService struct {
