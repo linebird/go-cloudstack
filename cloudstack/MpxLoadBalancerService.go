@@ -402,15 +402,15 @@ type MpxLoadBalancer struct {
 	Certificatename	string `json:"certificatename,omitempty"`
 	CipherGroupName	string `json:"cipherGroupName,omitempty"`
 	ClientIpYn	string `json:"clientIpYn,omitempty"`
-	networkid	string `json:"networkid,omitempty"`
-	requestsrate	string `json:"requestsrate,omitempty"`
-	sslv2	string `json:"sslv2,omitempty"`
-	sslv3	string `json:"sslv3,omitempty"`
-	state	string `json:"state,omitempty"`
-	tag	string `json:"tag,omitempty"`
-	tlsv1	string `json:"tlsv1,omitempty"`
-	tlsv11	string `json:"tlsv11,omitempty"`
-	tlsv12	string `json:"tlsv12,omitempty"`
+	Networkid	string `json:"networkid,omitempty"`
+	Requestsrate	string `json:"requestsrate,omitempty"`
+	Sslv2	string `json:"sslv2,omitempty"`
+	Sslv3	string `json:"sslv3,omitempty"`
+	State	string `json:"state,omitempty"`
+	Tag	string `json:"tag,omitempty"`
+	Tlsv1	string `json:"tlsv1,omitempty"`
+	Tlsv11	string `json:"tlsv11,omitempty"`
+	Tlsv12	string `json:"tlsv12,omitempty"`
 }
 
 
@@ -592,7 +592,13 @@ func (p *ListMpxLoadBlancerWebServersParams) SetLoadbalancerid(v string) {
 	p.p["loadbalancerid"] = v
 	return
 }
-func (s *MpxLoadBalancerService) ListMpxLoadBlancerWebServers(p *RemoveMpxLoadBlancerWebServerParams) (*ListMpxLoadBlancerWebServersResponse, error) {
+func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(loadbalancerid string) *ListMpxLoadBlancerWebServersParams {
+	p := &ListMpxLoadBlancerWebServersParams{}
+	p.p = make(map[string]interface{})
+	p.p["loadbalancerid"] = loadbalancerid
+	return p
+}
+func (s *MpxLoadBalancerService) ListMpxLoadBlancerWebServers(p *ListMpxLoadBlancerWebServersParams) (*ListMpxLoadBlancerWebServersResponse, error) {
 	resp, err := s.cs.newRequest("listLoadBalancerWebServers", p.toURLValues())
 	if err != nil {
 		return nil, err
@@ -614,8 +620,8 @@ type Loadbalancerwebserver struct {
 	Serviceid int `json:"serviceid,omitempty"`
 	Virtualmachineid string `json:"virtualmachineid,omitempty"`
 	Ipaddress string `json:"ipaddress,omitempty"`
-	Publicport int `json:"publicport,omitempty"`
-	Cursrvrconnections int `json:"cursrvrconnections,omitempty"`
+	Publicport string `json:"publicport,omitempty"`
+	Cursrvrconnections string `json:"cursrvrconnections,omitempty"`
 	State string `json:"state,omitempty"`
 	Throughputrate  int `json:"throughputrate ,omitempty"`
 	Avgsvrttfb  int `json:"avgsvrttfb ,omitempty"`
