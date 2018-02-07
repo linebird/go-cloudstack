@@ -7,7 +7,7 @@ import (
 
 func TestListMpxLoadBalancers(t *testing.T) {
 	println("TestListMpxLoadBalancers start")
-	cs := NewClient("https://api.ucloudbiz.olleh.com/loadbalancer/v1/client/api", "P_0ChsGqxI6CWsKrL3_mAg83GxSaAJFczoxDO4jE1JmPhiYTEvF5f1q3tgf1jXCPViQgYtnfeBgZw5TDRJdSSA", "rLzgCnTQnAw3uHsvzzmWvxg1gKdtj7WSzdNwzynzla0obVkGU0ks1fW3ocNSvD9DwkP7dEf8urvNHrti2WfVkg", false)
+	cs := NewClient("user api url", "user api-key", "user sec-key", false)
 	// p := cs.MpxLoadBalancer.NewListMpxLoadBalancerParams("", "", "", "", "")
 	p := cs.MpxLoadBalancer.NewListMpxLoadBalancerParams()
 
