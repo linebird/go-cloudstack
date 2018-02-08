@@ -972,6 +972,7 @@ type UcloudStorageService struct {
 	cs *CloudStackClient
 }
 
+// KT ucludbiz storage service
 func NewUcloudStorageService(cs *CloudStackClient) *UcloudStorageService {
 	return &UcloudStorageService{cs: cs}
 }
