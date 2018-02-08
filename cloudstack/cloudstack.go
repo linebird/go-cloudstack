@@ -133,6 +133,7 @@ type CloudStackClient struct {
 	VirtualMachine   *VirtualMachineService
 	Volume           *VolumeService
 	Zone             *ZoneService
+	UcloudStorage    *UcloudStorageService
 }
 
 // Creates a new client for communicating with CloudStack
@@ -217,6 +218,7 @@ func newClient(apiurl string, apikey string, secret string, async bool, verifyss
 	cs.VirtualMachine = NewVirtualMachineService(cs)
 	cs.Volume = NewVolumeService(cs)
 	cs.Zone = NewZoneService(cs)
+	cs.UcloudStorage = NewUcloudStorageService(cs)
 	return cs
 }
 
@@ -964,4 +966,12 @@ type ZoneService struct {
 
 func NewZoneService(cs *CloudStackClient) *ZoneService {
 	return &ZoneService{cs: cs}
+}
+
+type UcloudStorageService struct {
+	cs *CloudStackClient
+}
+
+func NewUcloudStorageService(cs *CloudStackClient) *UcloudStorageService {
+	return &UcloudStorageService{cs: cs}
 }
