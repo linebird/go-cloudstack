@@ -1,4 +1,3 @@
-
 package cloudstack
 
 import (
@@ -141,16 +140,16 @@ func (s *MpxLoadBalancerService) CreateMpxLoadBalancer(p *CreateMpxLoadBalancerP
 }
 
 type CreateMpxLoadBalancerResponse struct {
-	Zoneid	string `json:"zoneid,omitempty"`
-	Zonename	string `json:"zonename,omitempty"`
-	Loadbalacerid	string `json:"loadbalancerid,omitempty"`
-	Name	string `json:"name,omitempty"`
-	Loadbalanceroption	string `json:"loadbalanceroption,omitempty"`
-	Serviceip	string `json:"serviceip,omitempty"`
-	Serviceport	string `json:"serviceport,omitempty"`
-	Servicetype	string `json:"servicetype,omitempty"`
-	Healthchecktype	string `json:"healthchecktype,omitempty"`
-	Healthcheckurl	string `json:"healthcheckurl,omitempty"`
+	Zoneid             string `json:"zoneid,omitempty"`
+	Zonename           string `json:"zonename,omitempty"`
+	Loadbalacerid      string `json:"loadbalancerid,omitempty"`
+	Name               string `json:"name,omitempty"`
+	Loadbalanceroption string `json:"loadbalanceroption,omitempty"`
+	Serviceip          string `json:"serviceip,omitempty"`
+	Serviceport        string `json:"serviceport,omitempty"`
+	Servicetype        string `json:"servicetype,omitempty"`
+	Healthchecktype    string `json:"healthchecktype,omitempty"`
+	Healthcheckurl     string `json:"healthcheckurl,omitempty"`
 }
 
 type DeleteMpxLoadBalancerParams struct {
@@ -199,13 +198,14 @@ func (s *MpxLoadBalancerService) DeleteMpxLoadBalancer(p *DeleteMpxLoadBalancerP
 }
 
 type DeleteMpxLoadBalancerResponse struct {
-	Success	bool `json:"success,omitempty"`
-	Displaytext	string `json:"displaytext,omitempty"`
+	Success     bool   `json:"success,omitempty"`
+	Displaytext string `json:"displaytext,omitempty"`
 }
 
 type UpdateMpxLoadBalancerParams struct {
 	p map[string]interface{}
 }
+
 func (p *UpdateMpxLoadBalancerParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -279,17 +279,18 @@ func (s *MpxLoadBalancerService) UpdateLoadBalancer(p *UpdateMpxLoadBalancerPara
 
 	return &r, nil
 }
+
 type UpdateMpxLoadBalancerResponse struct {
-	Zoneid	string `json:"zoneid,omitempty"`
-	Zonename	string `json:"zonename,omitempty"`
-	Loadbalacerid	string `json:"loadbalancerid,omitempty"`
-	Name	string `json:"name,omitempty"`
-	Loadbalanceroption	string `json:"loadbalanceroption,omitempty"`
-	Serviceip	string `json:"serviceip,omitempty"`
-	Serviceport	string `json:"serviceport,omitempty"`
-	Servicetype	string `json:"servicetype,omitempty"`
-	Healthchecktype	string `json:"healthchecktype,omitempty"`
-	Healthcheckurl	string `json:"healthcheckurl,omitempty"`
+	Zoneid             string `json:"zoneid,omitempty"`
+	Zonename           string `json:"zonename,omitempty"`
+	Loadbalacerid      string `json:"loadbalancerid,omitempty"`
+	Name               string `json:"name,omitempty"`
+	Loadbalanceroption string `json:"loadbalanceroption,omitempty"`
+	Serviceip          string `json:"serviceip,omitempty"`
+	Serviceport        string `json:"serviceport,omitempty"`
+	Servicetype        string `json:"servicetype,omitempty"`
+	Healthchecktype    string `json:"healthchecktype,omitempty"`
+	Healthcheckurl     string `json:"healthcheckurl,omitempty"`
 }
 
 type ListMpxLoadBalancersParams struct {
@@ -361,6 +362,7 @@ func (s *MpxLoadBalancerService) NewListMpxLoadBalancerParams() *ListMpxLoadBala
 	p.p = make(map[string]interface{})
 	return p
 }
+
 // func (s *MpxLoadBalancerService) NewListMpxLoadBalancerParams(loadbalancerid string, zoneid string, name string, serviceip string, memid string) *ListMpxLoadBalancersParams {
 // 	p := &ListMpxLoadBalancersParams{}
 // 	p.p = make(map[string]interface{})
@@ -384,39 +386,40 @@ func (s *MpxLoadBalancerService) ListMpxLoadBalancers(p *ListMpxLoadBalancersPar
 
 	return &r, nil
 }
+
 type ListMpxLoadBalancersResponse struct {
-	Count           int               `json:"count"`
+	Count            int                `json:"count"`
 	MpxLoadBalancers []*MpxLoadBalancer `json:"loadbalancer"`
 }
 type MpxLoadBalancer struct {
-	Zoneid	string `json:"zoneid,omitempty"`
-	Zonename	string `json:"zonename,omitempty"`
-	Loadbalacerid	int `json:"loadbalancerid"`
-	Name	string `json:"name"`
-	Loadbalanceroption	string `json:"loadbalanceroption,omitempty"`
-	Serviceip	string `json:"serviceip,omitempty"`
-	Serviceport	string `json:"serviceport,omitempty"`
-	Servicetype	string `json:"servicetype,omitempty"`
-	Healthchecktype	string `json:"healthchecktype,omitempty"`
-	Healthcheckurl	string `json:"healthcheckurl,omitempty"`
-	Certificatename	string `json:"certificatename,omitempty"`
-	CipherGroupName	string `json:"cipherGroupName,omitempty"`
-	ClientIpYn	string `json:"clientIpYn,omitempty"`
-	Networkid	string `json:"networkid,omitempty"`
-	Requestsrate	string `json:"requestsrate,omitempty"`
-	Sslv2	string `json:"sslv2,omitempty"`
-	Sslv3	string `json:"sslv3,omitempty"`
-	State	string `json:"state,omitempty"`
-	Tag	string `json:"tag,omitempty"`
-	Tlsv1	string `json:"tlsv1,omitempty"`
-	Tlsv11	string `json:"tlsv11,omitempty"`
-	Tlsv12	string `json:"tlsv12,omitempty"`
+	Zoneid             string `json:"zoneid,omitempty"`
+	Zonename           string `json:"zonename,omitempty"`
+	Loadbalacerid      int    `json:"loadbalancerid"`
+	Name               string `json:"name"`
+	Loadbalanceroption string `json:"loadbalanceroption,omitempty"`
+	Serviceip          string `json:"serviceip,omitempty"`
+	Serviceport        string `json:"serviceport,omitempty"`
+	Servicetype        string `json:"servicetype,omitempty"`
+	Healthchecktype    string `json:"healthchecktype,omitempty"`
+	Healthcheckurl     string `json:"healthcheckurl,omitempty"`
+	Certificatename    string `json:"certificatename,omitempty"`
+	CipherGroupName    string `json:"cipherGroupName,omitempty"`
+	ClientIpYn         string `json:"clientIpYn,omitempty"`
+	Networkid          string `json:"networkid,omitempty"`
+	Requestsrate       string `json:"requestsrate,omitempty"`
+	Sslv2              string `json:"sslv2,omitempty"`
+	Sslv3              string `json:"sslv3,omitempty"`
+	State              string `json:"state,omitempty"`
+	Tag                string `json:"tag,omitempty"`
+	Tlsv1              string `json:"tlsv1,omitempty"`
+	Tlsv11             string `json:"tlsv11,omitempty"`
+	Tlsv12             string `json:"tlsv12,omitempty"`
 }
-
 
 type CheckMpxLoadBalancerNameParams struct {
 	p map[string]interface{}
 }
+
 func (p *CheckMpxLoadBalancerNameParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -457,15 +460,17 @@ func (s *MpxLoadBalancerService) CheckMpxLoadBalancerName(p *ListMpxLoadBalancer
 
 	return &r, nil
 }
+
 type CheckMpxLoadBalancerNameResponse struct {
-	Success	string `json:"success,omitempty"`
-	Text	string `json:"text,omitempty"`
+	Success string `json:"success,omitempty"`
+	Text    string `json:"text,omitempty"`
 }
 
 // Mpx LoadBalancer Service Resource 관리 API
 type AddMpxLoadBlancerWebServerParams struct {
 	p map[string]interface{}
 }
+
 func (p *AddMpxLoadBlancerWebServerParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -526,17 +531,19 @@ func (s *MpxLoadBalancerService) AddMpxLoadBlancerWebServer(p *AddMpxLoadBlancer
 
 	return &r, nil
 }
+
 type AddMpxLoadBlancerWebServerResponse struct {
-	Serviceid int `json:"serviceid,omitempty"`
-	Loadbalancerid string `json:"loadbalancerid,omitempty"`
+	Serviceid        int    `json:"serviceid,omitempty"`
+	Loadbalancerid   string `json:"loadbalancerid,omitempty"`
 	Virtualmachineid string `json:"virtualmachineid,omitempty"`
-	Ipaddress string `json:"ipaddress,omitempty"`
-	Publicport int `json:"publicport,omitempty"`
+	Ipaddress        string `json:"ipaddress,omitempty"`
+	Publicport       int    `json:"publicport,omitempty"`
 }
 
 type RemoveMpxLoadBlancerWebServerParams struct {
 	p map[string]interface{}
 }
+
 func (p *RemoveMpxLoadBlancerWebServerParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -567,14 +574,16 @@ func (s *MpxLoadBalancerService) RemoveLoadBalancerWebServer(p *RemoveMpxLoadBla
 
 	return &r, nil
 }
+
 type RemoveMpxLoadBlancerWebServerResponse struct {
-	Success bool `json:"success"`
+	Success     bool   `json:"success"`
 	Displaytext string `json:"displaytext,omitempty"`
 }
 
 type ListMpxLoadBlancerWebServersParams struct {
 	p map[string]interface{}
 }
+
 func (p *ListMpxLoadBlancerWebServersParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -592,7 +601,14 @@ func (p *ListMpxLoadBlancerWebServersParams) SetLoadbalancerid(v string) {
 	p.p["loadbalancerid"] = v
 	return
 }
-func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(loadbalancerid string) *ListMpxLoadBlancerWebServersParams {
+
+// func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(loadbalancerid string) *ListMpxLoadBlancerWebServersParams {
+// 	p := &ListMpxLoadBlancerWebServersParams{}
+// 	p.p = make(map[string]interface{})
+// 	p.p["loadbalancerid"] = loadbalancerid
+// 	return p
+// }
+func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(lbname string) *ListMpxLoadBlancerWebServersParams {
 	p := &ListMpxLoadBlancerWebServersParams{}
 	p.p = make(map[string]interface{})
 	p.p["loadbalancerid"] = loadbalancerid
@@ -611,27 +627,28 @@ func (s *MpxLoadBalancerService) ListMpxLoadBlancerWebServers(p *ListMpxLoadBlan
 
 	return &r, nil
 }
-type ListMpxLoadBlancerWebServersResponse struct {
-	Count int `json:"count"`
-	Loadbalancerwebserver []*Loadbalancerwebserver `json:"loadbalancerwebserver"`
-}
-type Loadbalancerwebserver struct {
-	Loadbalancerid int `json:"loadbalancerid,omitempty"`
-	Serviceid int `json:"serviceid,omitempty"`
-	Virtualmachineid string `json:"virtualmachineid,omitempty"`
-	Ipaddress string `json:"ipaddress,omitempty"`
-	Publicport string `json:"publicport,omitempty"`
-	Cursrvrconnections string `json:"cursrvrconnections,omitempty"`
-	State string `json:"state,omitempty"`
-	Throughputrate  int `json:"throughputrate ,omitempty"`
-	Avgsvrttfb  int `json:"avgsvrttfb ,omitempty"`
-	Requestsrate  int `json:"requestsrate ,omitempty"`
-}
 
+type ListMpxLoadBlancerWebServersResponse struct {
+	Count                    int                         `json:"count"`
+	MpxLoadbalancerWebserver []*MpxLoadbalancerWebserver `json:"loadbalancerwebserver"`
+}
+type MpxLoadbalancerWebserver struct {
+	Loadbalancerid     int    `json:"loadbalancerid,omitempty"`
+	Serviceid          int    `json:"serviceid,omitempty"`
+	Virtualmachineid   string `json:"virtualmachineid,omitempty"`
+	Ipaddress          string `json:"ipaddress,omitempty"`
+	Publicport         string `json:"publicport,omitempty"`
+	Cursrvrconnections string `json:"cursrvrconnections,omitempty"`
+	State              string `json:"state,omitempty"`
+	Throughputrate     int    `json:"throughputrate ,omitempty"`
+	Avgsvrttfb         int    `json:"avgsvrttfb ,omitempty"`
+	Requestsrate       int    `json:"requestsrate ,omitempty"`
+}
 
 type CreateTagParams struct {
 	p map[string]interface{}
 }
+
 func (p *CreateTagParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -672,14 +689,16 @@ func (s *MpxLoadBalancerService) CreateTag(p *CreateTagParams) (*CreateTagRespon
 
 	return &r, nil
 }
+
 type CreateTagResponse struct {
-	Success bool `json:success,omitempth`
+	Success     bool   `json:success,omitempth`
 	Displaytext string `json:displaytext,omitempth`
 }
 
 type DeleteTagParams struct {
 	p map[string]interface{}
 }
+
 func (p *DeleteTagParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -710,17 +729,17 @@ func (s *MpxLoadBalancerService) DeleteTag(p *DeleteTagParams) (*DeleteTagRespon
 
 	return &r, nil
 }
+
 type DeleteTagResponse struct {
-	Success bool `json:success,omitempth`
+	Success     bool   `json:success,omitempth`
 	Displaytext string `json:displaytext,omitempth`
 }
-
-
 
 // Certificate API
 type CreateCertificateParams struct {
 	p map[string]interface{}
 }
+
 func (p *CreateCertificateParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -791,6 +810,7 @@ func (s *MpxLoadBalancerService) CreateCertificate(p *CreateCertificateParams) (
 
 	return &r, nil
 }
+
 type CreateCertificateResponse struct {
 	Success bool `json:success,omitempth`
 }
@@ -798,6 +818,7 @@ type CreateCertificateResponse struct {
 type DeleteCertificateParams struct {
 	p map[string]interface{}
 }
+
 func (p *DeleteCertificateParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -828,6 +849,7 @@ func (s *MpxLoadBalancerService) DeleteCertificate(p *DeleteCertificateParams) (
 
 	return &r, nil
 }
+
 type DeleteCertificateResponse struct {
 	Success bool `json:success,omitempth`
 }
@@ -835,6 +857,7 @@ type DeleteCertificateResponse struct {
 type ManageCertificateParams struct {
 	p map[string]interface{}
 }
+
 func (p *ManageCertificateParams) toURLValues() url.Values {
 	u := url.Values{}
 	if p.p == nil {
@@ -885,6 +908,7 @@ func (s *MpxLoadBalancerService) ManageCertificate(p *ManageCertificateParams) (
 
 	return &r, nil
 }
+
 type ManageCertificateResponse struct {
 	Success bool `json:success,omitempth`
 }
