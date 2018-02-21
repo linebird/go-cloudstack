@@ -602,18 +602,19 @@ func (p *ListMpxLoadBlancerWebServersParams) SetLoadbalancerid(v string) {
 	return
 }
 
-// func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(loadbalancerid string) *ListMpxLoadBlancerWebServersParams {
-// 	p := &ListMpxLoadBlancerWebServersParams{}
-// 	p.p = make(map[string]interface{})
-// 	p.p["loadbalancerid"] = loadbalancerid
-// 	return p
-// }
-func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(lbname string) *ListMpxLoadBlancerWebServersParams {
+func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(loadbalancerid string) *ListMpxLoadBlancerWebServersParams {
 	p := &ListMpxLoadBlancerWebServersParams{}
 	p.p = make(map[string]interface{})
 	p.p["loadbalancerid"] = loadbalancerid
 	return p
 }
+
+// func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(lbname string) *ListMpxLoadBlancerWebServersParams {
+// 	p := &ListMpxLoadBlancerWebServersParams{}
+// 	p.p = make(map[string]interface{})
+// 	p.p["loadbalancerid"] = loadbalancerid
+// 	return p
+// }
 func (s *MpxLoadBalancerService) ListMpxLoadBlancerWebServers(p *ListMpxLoadBlancerWebServersParams) (*ListMpxLoadBlancerWebServersResponse, error) {
 	resp, err := s.cs.newRequest("listLoadBalancerWebServers", p.toURLValues())
 	if err != nil {
