@@ -81,6 +81,7 @@ type CloudStackClient struct {
 	CloudIdentifier  *CloudIdentifierService
 	Cluster          *ClusterService
 	Configuration    *ConfigurationService
+	Container        *ContainerService
 	Custom           *CustomService
 	DiskOffering     *DiskOfferingService
 	Domain           *DomainService
@@ -166,6 +167,7 @@ func newClient(apiurl string, apikey string, secret string, async bool, verifyss
 	cs.CloudIdentifier = NewCloudIdentifierService(cs)
 	cs.Cluster = NewClusterService(cs)
 	cs.Configuration = NewConfigurationService(cs)
+	cs.Container = NewContainerService(cs)
 	cs.Custom = NewCustomService(cs)
 	cs.DiskOffering = NewDiskOfferingService(cs)
 	cs.Domain = NewDomainService(cs)
@@ -670,6 +672,14 @@ type MpxLoadBalancerService struct {
 
 func NewMpxLoadBalancerService(cs *CloudStackClient) *MpxLoadBalancerService {
 	return &MpxLoadBalancerService{cs: cs}
+}
+
+type ContainerService struct {
+	cs *CloudStackClient
+}
+
+func NewContainerService(cs *CloudStackClient) *ContainerService {
+	return &ContainerService{cs: cs}
 }
 
 type NATService struct {
