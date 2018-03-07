@@ -52,6 +52,7 @@ func (p *CreateMpxLoadBalancerParams) SetZoneid(v string) {
 		p.p = make(map[string]interface{})
 	}
 	p.p["zoneid"] = v
+
 	return
 }
 
