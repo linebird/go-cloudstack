@@ -96,6 +96,7 @@ func (p *ListCsInstancesParams) toURLValues() url.Values {
 	if v, found := p.p["clusterName"]; found {
 		u.Set("clusterName", v.(string))
 	}
+
 	return u
 }
 

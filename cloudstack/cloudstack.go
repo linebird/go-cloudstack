@@ -55,6 +55,7 @@ type CSError struct {
 
 func (e *CSError) Error() error {
 	return fmt.Errorf("CloudStack API error %d (CSExceptionErrorCode: %d): %s", e.ErrorCode, e.CSErrorCode, e.ErrorText)
+
 }
 
 type CloudStackClient struct {

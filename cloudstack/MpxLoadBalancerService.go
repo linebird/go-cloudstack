@@ -43,6 +43,7 @@ func (p *CreateMpxLoadBalancerParams) toURLValues() url.Values {
 		vv := strconv.Itoa(v.(int))
 		u.Set("healthcheckurl", vv)
 	}
+
 	return u
 }
 
