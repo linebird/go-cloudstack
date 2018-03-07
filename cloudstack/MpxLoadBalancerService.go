@@ -447,7 +447,16 @@ func (p *CheckMpxLoadBalancerNameParams) SetZoneid(v string) {
 	p.p["zoneid"] = v
 	return
 }
-func (s *MpxLoadBalancerService) CheckMpxLoadBalancerName(p *ListMpxLoadBalancersParams) (*CheckMpxLoadBalancerNameResponse, error) {
+
+func (s *MpxLoadBalancerService) NewCheckMpxLoadBalancerNameParams(name string, zoneid string) *CheckMpxLoadBalancerNameParams {
+	p := &CheckMpxLoadBalancerNameParams{}
+	p.p = make(map[string]interface{})
+	p.p["name"] = name
+	p.p["zoneid"] = zoneid
+	return p
+}
+
+func (s *MpxLoadBalancerService) CheckMpxLoadBalancerName(p *CheckMpxLoadBalancerNameParams) (*CheckMpxLoadBalancerNameResponse, error) {
 	resp, err := s.cs.newRequest("checkLoadBalancerName", p.toURLValues())
 	if err != nil {
 		return nil, err

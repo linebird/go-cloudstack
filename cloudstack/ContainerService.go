@@ -74,6 +74,7 @@ type CsCluster struct {
 	// HaEnabled               string `json:"haEnabled,omitempty"`
 	AutoscalingGroupName    string `json:"autoscalingGroupName,omitempty"`
 	LaunchConfigurationName string `json:"launchConfigurationName,omitempty"`
+	ZoneId                  string `json:"zoneId,omitempty"`
 }
 
 // createClusters api block.

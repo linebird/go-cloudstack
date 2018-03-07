@@ -334,6 +334,7 @@ func (cs *CloudStackClient) newRequest(api string, params url.Values) (json.RawM
 	} else {
 		// Create the final URL before we issue the request
 		url := cs.baseURL + "?" + s + "&signature=" + url.QueryEscape(signature)
+		println(url)
 
 		// Make a GET call
 		resp, err = cs.client.Get(url)
