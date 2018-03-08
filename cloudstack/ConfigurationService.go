@@ -73,6 +73,7 @@ func (p *UpdateConfigurationParams) SetName(v string) {
 		p.p = make(map[string]interface{})
 	}
 	p.p["name"] = v
+
 	return
 }
 
