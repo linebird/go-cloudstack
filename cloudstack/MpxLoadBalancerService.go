@@ -629,12 +629,6 @@ func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(loadbalan
 	return p
 }
 
-// func (s *MpxLoadBalancerService) NewListMpxLoadBlancerWebServersParams(lbname string) *ListMpxLoadBlancerWebServersParams {
-// 	p := &ListMpxLoadBlancerWebServersParams{}
-// 	p.p = make(map[string]interface{})
-// 	p.p["loadbalancerid"] = loadbalancerid
-// 	return p
-// }
 func (s *MpxLoadBalancerService) ListMpxLoadBlancerWebServers(p *ListMpxLoadBlancerWebServersParams) (*ListMpxLoadBlancerWebServersResponse, error) {
 	resp, err := s.cs.newRequest("listLoadBalancerWebServers", p.toURLValues())
 	if err != nil {
@@ -697,6 +691,15 @@ func (p *CreateTagParams) SetTag(v string) {
 	p.p["tag"] = v
 	return
 }
+
+func (s *MpxLoadBalancerService) NewCreateTagParams(loadbalancerid string, tag string) *CreateTagParams {
+	p := &CreateTagParams{}
+	p.p = make(map[string]interface{})
+	p.p["loadbalancerid"] = loadbalancerid
+	p.p["tag"] = tag
+	return p
+}
+
 func (s *MpxLoadBalancerService) CreateTag(p *CreateTagParams) (*CreateTagResponse, error) {
 	resp, err := s.cs.newRequest("createTag", p.toURLValues())
 	if err != nil {
