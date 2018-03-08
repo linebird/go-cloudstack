@@ -574,10 +574,10 @@ func (p *RemoveMpxLoadBlancerWebServerParams) SetServiceid(v string) {
 	return
 }
 
-func (s *MpxLoadBalancerService) NewRemoveMpxLoadBlancerWebServerParams(loadbalancerid int) *RemoveMpxLoadBlancerWebServerParams {
+func (s *MpxLoadBalancerService) NewRemoveMpxLoadBlancerWebServerParams(serviceid string) *RemoveMpxLoadBlancerWebServerParams {
 	p := &RemoveMpxLoadBlancerWebServerParams{}
 	p.p = make(map[string]interface{})
-	p.p["loadbalancerid"] = loadbalancerid
+	p.p["serviceid"] = serviceid
 	return p
 }
 
