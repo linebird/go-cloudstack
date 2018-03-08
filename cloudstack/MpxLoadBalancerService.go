@@ -365,16 +365,6 @@ func (s *MpxLoadBalancerService) NewListMpxLoadBalancerParams() *ListMpxLoadBala
 	return p
 }
 
-// func (s *MpxLoadBalancerService) NewListMpxLoadBalancerParams(loadbalancerid string, zoneid string, name string, serviceip string, memid string) *ListMpxLoadBalancersParams {
-// 	p := &ListMpxLoadBalancersParams{}
-// 	p.p = make(map[string]interface{})
-// 	p.p["zoneid"] = zoneid
-// 	p.p["loadbalancerid"] = loadbalancerid
-// 	p.p["name"] = name
-// 	p.p["serviceip"] = serviceip
-// 	p.p["memid"] = memid
-// 	return p
-// }
 func (s *MpxLoadBalancerService) ListMpxLoadBalancers(p *ListMpxLoadBalancersParams) (*ListMpxLoadBalancersResponse, error) {
 	resp, err := s.cs.newRequest("listLoadBalancers", p.toURLValues())
 	if err != nil {
@@ -529,6 +519,17 @@ func (p *AddMpxLoadBlancerWebServerParams) SetPublicport(v string) {
 	p.p["publicport"] = v
 	return
 }
+
+func (s *MpxLoadBalancerService) NewAddMpxLoadBlancerWebServerParams(loadbalancerid int, virtualmachineid string, ipaddress string, publicport int) *AddMpxLoadBlancerWebServerParams {
+	p := &AddMpxLoadBlancerWebServerParams{}
+	p.p = make(map[string]interface{})
+	p.p["loadbalancerid"] = loadbalancerid
+	p.p["virtualmachineid"] = virtualmachineid
+	p.p["ipaddress"] = ipaddress
+	p.p["publicport"] = publicport
+	return p
+}
+
 func (s *MpxLoadBalancerService) AddMpxLoadBlancerWebServer(p *AddMpxLoadBlancerWebServerParams) (*AddMpxLoadBlancerWebServerResponse, error) {
 	resp, err := s.cs.newRequest("addLoadBlancerWebServer", p.toURLValues())
 	if err != nil {
@@ -572,6 +573,14 @@ func (p *RemoveMpxLoadBlancerWebServerParams) SetServiceid(v string) {
 	p.p["serviceid"] = v
 	return
 }
+
+func (s *MpxLoadBalancerService) NewRemoveMpxLoadBlancerWebServerParams(loadbalancerid int) *RemoveMpxLoadBlancerWebServerParams {
+	p := &RemoveMpxLoadBlancerWebServerParams{}
+	p.p = make(map[string]interface{})
+	p.p["loadbalancerid"] = loadbalancerid
+	return p
+}
+
 func (s *MpxLoadBalancerService) RemoveLoadBalancerWebServer(p *RemoveMpxLoadBlancerWebServerParams) (*RemoveMpxLoadBlancerWebServerResponse, error) {
 	resp, err := s.cs.newRequest("removeLoadBalancerWebServer", p.toURLValues())
 	if err != nil {
